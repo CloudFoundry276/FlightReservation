@@ -25,7 +25,7 @@ export class PassengerDetailsComponent implements OnInit {
   public onSubmit() {
     this.reservation.flight_id = this.flightData.id;
     this.reservationService.saveReservation(this.reservation).subscribe((resp: any)=>{
-      this.router.navigate(['/confirmReservation', resp.id]);
+      this.router.navigate(['/confirmReservation/'+resp.id, resp.id]);
     })
   }
 
