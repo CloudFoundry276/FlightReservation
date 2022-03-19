@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ReservationService } from 'src/app/services/reservation.service';
 
 @Component({
   selector: 'app-display-flights',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayFlightsComponent implements OnInit {
 
-  constructor() { }
+  data:any;
+
+  constructor(private reservationService:ReservationService, private router:Router) { }
 
   ngOnInit(): void {
+    this.data = this.reservationService.flightData;
+  }
+
+  public onSelect(id:number): any {
+    this.router.navigate(['/passengerDetails/'+id]);
   }
 
 }
