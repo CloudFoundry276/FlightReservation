@@ -22,7 +22,6 @@ export class FindFlightsComponent implements OnInit {
   public onSubmit() {
     this.reservationService.getFlights(this.criteria).subscribe((resp: any)=>{
       this.reservationService.flightData = resp;
-      console.log(resp);
       this.router.navigate(['/displayFlights']);
     })
   }

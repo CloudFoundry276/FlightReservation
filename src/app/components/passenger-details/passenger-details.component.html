@@ -1,1 +1,106 @@
-<p>passenger-details works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Reservation</title>
+</head>
+
+<body>
+    <h2>Complete Reservation</h2>
+    <h2>Flight Details</h2>
+    <table border="1">
+        <tbody>
+            <tr>
+                <th>Flight Number</th>
+                <td>{{flightData?.flight_number}}</td>
+            </tr>
+            <tr>
+                <th>Airlines</th>
+                <td>{{flightData?.operating_airlines}}</td>
+            </tr>
+            <tr>
+                <th>Departure City</th>
+                <td>{{flightData?.departure_city}}</td>
+            </tr>
+            <tr>
+                <th>Arrival City</th>
+                <td>{{flightData?.arrival_city}}</td>
+            </tr>
+            <tr>
+                <th>Departure Date</th>
+                <td>{{flightData?.departure_date}}</td>
+            </tr>
+            <tr>
+                <th>Departure Time</th>
+                <td>{{flightData?.estimated_departure_time}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2>Passenger Details</h2>
+    <form #passengerForm="ngForm" (ngSubmit)="onSubmit()">
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>First Name</th>
+                    <td>
+                        <input type="text" name="first_name" id="first_name" [(ngModel)]="reservation.first_name" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Last Name</th>
+                    <td>
+                        <input type="text" name="last_name" id="last_name" [(ngModel)]="reservation.last_name" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Middle Name</th>
+                    <td>
+                        <input type="text" name="middle_name" id="middle_name" [(ngModel)]="reservation.middle_name" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>
+                        <input type="text" name="email" id="email" [(ngModel)]="reservation.email" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td>
+                        <input type="text" name="phone" id="phone" [(ngModel)]="reservation.phone" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Card Number</th>
+                    <td>
+                        <input type="text" name="card_number" id="card_number" [(ngModel)]="reservation.card_number" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Expiry Date</th>
+                    <td>
+                        <input type="text" name="expiration_date" id="expiration_date" [(ngModel)]="reservation.expiration_date" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Security Code</th>
+                    <td>
+                        <input type="text" name="security_code" id="security_code" [(ngModel)]="reservation.security_code" />
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <input type="submit" value="Confirm" />
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>
+<router-outlet></router-outlet>

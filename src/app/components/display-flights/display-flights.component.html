@@ -13,6 +13,7 @@
     <table border="1">
         <thead>
             <tr>
+                <th>Flight Number</th>
                 <th>Airlines</th>
                 <th>Departure City</th>
                 <th>Arrival City</th>
@@ -23,6 +24,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let flight of data">
+                <td>{{flight.flight_number}}</td>
                 <td>{{flight.operating_airlines}}</td>
                 <td>{{flight.departure_city}}</td>
                 <td>{{flight.arrival_city}}</td>
